@@ -63,6 +63,8 @@ public class LocatorsXpath {
         WebElement twoAttributesSearchOr = driver.findElement(
                 By.xpath("//div[@id='flyout-cart' or @class='flyout-cart']")
         );
+//---------------------------------HOMEWORK-----------------------------------
+
 
 
 

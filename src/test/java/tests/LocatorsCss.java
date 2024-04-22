@@ -35,44 +35,59 @@ public class LocatorsCss {
     @Test
     public void testCSS() {
     // by id By.id("#topcartlink")
-        WebElement byId = driver.findElement(By.cssSelector("#topcartlink"));
+//        WebElement byId = driver.findElement(By.cssSelector("#topcartlink"));
+//
+//        // by class By.className("header-logo")
+//        WebElement byClass = driver.findElement(By.cssSelector(".header-logo"));
+//
+//        // Attribute: in DOM::    attributeName="attributeValue"
+//        // "[attributeName="attributeValue"]"
+//        WebElement byAttrNameAndValue = driver.findElement(
+//                By.cssSelector("[type='text/javascript']"));
+//
+//        WebElement byAttrName = driver.findElement(
+//                By.cssSelector("[type]"));
+//
+//        WebElement byAttrNameAndPartyValue = driver.findElement(
+//                By.cssSelector("[type*='t/javas']"));
+//
+//        WebElement byAttrNameAndStartsWithValue = driver.findElement(
+//                By.cssSelector("[type^='text/ja']"));
+//
+//        WebElement byAttrNameAndEndsWithValue = driver.findElement(
+//                By.cssSelector("[type$='cript']"));
+//
+//        // by tag
+//
+//        WebElement byTag = driver.findElement(By.cssSelector("div"));
+//
+//        // by tag and class
+//        // <tagName class "classValue"> Text </tagName>
+//        // tagName.classValue
+//
+//        WebElement byTagAndClassValue = driver.findElement(By.cssSelector("div.header"));
+//
+//        WebElement byTagIdValueAndClassValue =
+//                driver.findElement(By.cssSelector("div#flyout-cart.flyout-cart"));
+//
+//        WebElement byTagIdAndAttribute =
+//                driver.findElement(By.cssSelector("input#small-searchterms[type='text']"));
 
-        // by class By.className("header-logo")
-        WebElement byClass = driver.findElement(By.cssSelector(".header-logo"));
-
-        // Attribute: in DOM::    attributeName="attributeValue"
-        // "[attributeName="attributeValue"]"
-        WebElement byAttrNameAndValue = driver.findElement(
-                By.cssSelector("[type='text/javascript']"));
-
-        WebElement byAttrName = driver.findElement(
-                By.cssSelector("[type]"));
-
-        WebElement byAttrNameAndPartyValue = driver.findElement(
-                By.cssSelector("[type*='t/javas']"));
-
-        WebElement byAttrNameAndStartsWithValue = driver.findElement(
-                By.cssSelector("[type^='text/ja']"));
-
-        WebElement byAttrNameAndEndsWithValue = driver.findElement(
-                By.cssSelector("[type$='cript']"));
-
-        // by tag
-
-        WebElement byTag = driver.findElement(By.cssSelector("div"));
-
-        // by tag and class
-        // <tagName class "classValue"> Text </tagName>
-        // tagName.classValue
-
-        WebElement byTagAndClassValue = driver.findElement(By.cssSelector("div.header"));
-
-        WebElement byTagIdValueAndClassValue =
-                driver.findElement(By.cssSelector("div#flyout-cart.flyout-cart"));
-
-        WebElement byTagIdAndAttribute =
-                driver.findElement(By.cssSelector("input#small-searchterms[type='text']"));
-
+//-----------------------HOMEWORK--------------------------------------------
+        WebElement byId1 = driver.findElement(By.cssSelector("#dialog-notifications-success"));
+        WebElement byClass1 = driver.findElement(By.cssSelector(".top-menu"));
+        WebElement byAttrName1 = driver.findElement(By.cssSelector("[title]"));
+        WebElement byAttrName2 = driver.findElement(By.cssSelector("[style]"));
+        WebElement byTagAndClassValue1 = driver.findElement(By.cssSelector("div.listbox"));
+        WebElement byTag1 = driver.findElement(By.cssSelector("script"));
+        WebElement byAttrNameAndPartyValue1 = driver.findElement(
+                  By.cssSelector("[title*='Show details']"));
+        WebElement byAttrNameAndEndsWithValue1 = driver.findElement(
+                  By.cssSelector("[type$='xt']"));
+        WebElement byAttrNameAndStartsWithValue1 = driver.findElement(
+                  By.cssSelector("[style^='display: no']"));
+        WebElement byTagIdValueAndClassValue1 =
+                  driver.findElement(By.cssSelector("div#newsletter-subscribe-block.newsletter-subscribe-block"));
 
     }
 }
