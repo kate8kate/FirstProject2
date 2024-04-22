@@ -9,9 +9,6 @@ import org.testng.annotations.Test;
 public class CreateAccountTest extends TestBase{
     @AfterMethod
     public void methodPostCondition() {
-        driver.findElement(
-                        By.xpath("//div[contains(@class,'navbar-logged')]//button"))
-                .click();
         driver.navigate().to("https://demowebshop.tricentis.com/");
     }
     @Test
@@ -22,9 +19,15 @@ public class CreateAccountTest extends TestBase{
         // input FirstName by: //input[@name='FirstName']
         WebElement inputFirstname = driver.findElement(By.xpath(
                 "//input[@name='FirstName']"));
+        inputFirstname.click();
+        inputFirstname.clear();
+        inputFirstname.sendKeys("kjnfergl");
         // input LastName by: //input[@name='FirstName']
         WebElement inputLastname = driver.findElement(By.xpath(
                 "//input[@name='LastName']"));
+        inputLastname.click();
+        inputLastname.clear();
+        inputLastname.sendKeys("jklegojerhy;");
         // input e-mail by: //input[@name='Email']
         WebElement inputEmail = driver.findElement(By.xpath(
                 "//input[@name='Email']"));
