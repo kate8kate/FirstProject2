@@ -10,10 +10,10 @@ import org.testng.annotations.BeforeSuite;
 import java.time.Duration;
 
 public class TestBase {
-    static WebDriver driver;
+     WebDriver driver;
 
     @BeforeSuite
-    public static void init() {
+    public void init() {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--lange=en");
         WebDriverManager.chromedriver().setup();
@@ -24,5 +24,5 @@ public class TestBase {
         driver.navigate().to("https://demowebshop.tricentis.com/");
     }
     @AfterSuite
-    public static void tearDown() { driver.quit(); }
+    public void tearDown() { driver.quit(); }
 }
