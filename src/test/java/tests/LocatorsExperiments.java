@@ -61,9 +61,6 @@ public class LocatorsExperiments {
         // TODO by name
 //        driver.findElement(By.name("value of the attribute with the name -> name"));
 
-
-
-
         driver.quit();
     }
 }

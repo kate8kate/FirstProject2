@@ -52,7 +52,7 @@ public class LocatorsXpath {
         );
         // partial text: //strong[contains(text(),' poll')]
         WebElement byPartialText =
-                driver.findElement(By.xpath("//h2[contains(text(),' Welcome to our ')]"));
+                driver.findElement(By.xpath("//h2[contains(text(),'Welcome to our')]"));
 
         // contains - startWith - endsWith
 

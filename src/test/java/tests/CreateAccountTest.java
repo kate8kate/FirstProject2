@@ -3,6 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -49,5 +50,15 @@ public class CreateAccountTest extends TestBase{
         confirmPassword.sendKeys("Qwerty123!");
         // click on register button by:  //input[@name='register-button']
         driver.findElement(By.xpath("//input[@name='register-button']")).click();
+
+        // validation-verification by checking account info: //a[@href='/customer/info' and @class='account']
+        // text: jfnwig@jngut3.nvh
+        WebElement accountInfo = driver.findElement(
+                By.xpath("///a[@href='/customer/info' and @class='account']")
+        );
+        String actualRes = accountInfo.getText().trim();
+        System.out.println(actualRes);
+
+        Assert.assertEquals(actualRes, "jfnwig@jngut3.nvh");
     }
 }
