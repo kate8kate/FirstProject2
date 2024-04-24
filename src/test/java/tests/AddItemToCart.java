@@ -32,9 +32,9 @@ public class AddItemToCart extends TestBase{
 
         // click on //*[@type ='button' and @class='button-2 product-box-add-to-cart-button']
         driver.findElement(By.xpath(
-                "//*[@type ='button' and @class='button-2 product-box-add-to-cart-button']"));
-        // check out your cart //*[@class='cart-label']
-        WebElement checkCart = driver.findElement(By.xpath("//*[@class='cart-label']"));
+                "//*[@type ='button' and @class='button-2 product-box-add-to-cart-button']")).click();
+        // check out your cart by click //*[@class='cart-label']
+        driver.findElement(By.xpath("//*[@class='cart-label']")).click();
 
 
     }
