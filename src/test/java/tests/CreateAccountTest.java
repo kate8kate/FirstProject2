@@ -1,7 +1,6 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -34,7 +33,7 @@ public class CreateAccountTest extends TestBase{
                 "//input[@name='Email']"));
         inputEmail.click();
         inputEmail.clear();
-        inputEmail.sendKeys("jfnwig@jngut3.nvh");
+        inputEmail.sendKeys("kmnvljsn@mnvl.jhn");
 
         // input password by: //input[@name='Password']
         WebElement inputPassword = driver.findElement(By.xpath(
@@ -59,6 +58,6 @@ public class CreateAccountTest extends TestBase{
         String actualRes = accountInfo.getText().trim();
         System.out.println(actualRes);
 
-        Assert.assertEquals(actualRes, "jfnwig@jngut3.nvh");
+        Assert.assertEquals(actualRes, "kmnvljsn@mnvl.jhn");
     }
 }
