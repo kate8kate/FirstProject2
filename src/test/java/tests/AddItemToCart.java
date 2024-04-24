@@ -1,6 +1,7 @@
 package tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 public class AddItemToCart extends TestBase{
@@ -36,6 +37,13 @@ public class AddItemToCart extends TestBase{
         // check out your cart by click //*[@class='cart-label']
         driver.findElement(By.xpath("//*[@class='cart-label']")).click();
 
+        WebElement сartInfo = driver.findElement(
+                By.xpath("//span[text()='1590.00' and @class='price actual-price']")
+        );
+        String actualRes = сartInfo.getText().trim();
+        System.out.println(actualRes);
+
+        Assert.assertEquals(actualRes, "1590.00");
 
     }
 }
