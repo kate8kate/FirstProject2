@@ -11,39 +11,61 @@ public class AddItemToCart extends TestBase{
     public void preconditions() {
         // TODO login
         // click on login btn by: //a[@href='/login']
+        startToLoginBtn();
+        // fill email by: //input[@name='Email']
+        fillEmailOnLogin("kmnvljsn@mnvl.jhn");
+        // fill password by: //input[@name='Password']
+        fillPasswordOnLogin("Qwerty123!");
+        // click login btn by: //button[@name='login']
+        clickOnLoginBtn();
+
+    }
+    public void startToLoginBtn() {
         driver.findElement(By.xpath("//a[@href='/login']")).click();
-        // fill email by: //input[@name='email']
-        WebElement inputEmail = driver.findElement(By
-                .xpath("//input[@name='Email']"));
-        inputEmail.click();
-        inputEmail.clear();
-        inputEmail.sendKeys("kmnvljsn@mnvl.jhn");
-        // fill password by: //input[@name='password']
+    }
+
+    public void clickOnLoginBtn() {
+        driver.findElement(By.xpath("//*[@type='submit' and @class='button-1 login-button']")).click();
+    }
+
+    public void fillPasswordOnLogin(String Password) {
         WebElement inputPassword = driver.findElement(By
                 .xpath("//input[@name='Password']"));
         inputPassword.click();
         inputPassword.clear();
-        inputPassword.sendKeys("Qwerty123!");
-        // click login btn by: //button[@name='login']
-        driver.findElement(By.xpath("//*[@type='submit' and @class='button-1 login-button']")).click();
-
+        inputPassword.sendKeys(Password);
     }
+
+    public void fillEmailOnLogin(String Email) {
+        WebElement inputEmail = driver.findElement(By
+                .xpath("//input[@name='Email']"));
+        inputEmail.click();
+        inputEmail.clear();
+        inputEmail.sendKeys(Email);
+    }
+
     @Test
     public void addItemToCart() {
 
-        // click on //*[@type ='button' and @class='button-2 product-box-add-to-cart-button']
-        driver.findElement(By.xpath(
-                "//*[@type ='button' and @class='button-2 product-box-add-to-cart-button']")).click();
-        // check out your cart by click //*[@class='cart-label']
-        driver.findElement(By.xpath("//*[@class='cart-label']")).click();
+        addItemToCartBtn();
+        checkYourCartBtn();
 
         WebElement сartInfo = driver.findElement(
-                By.xpath("//span[text()='1590.00' and @class='price actual-price']")
+                By.xpath("//a[text()='14.1-inch Laptop' and @class='product-name']")
         );
         String actualRes = сartInfo.getText().trim();
         System.out.println(actualRes);
 
-        Assert.assertEquals(actualRes, "1590.00");
+        Assert.assertEquals(actualRes, "14.1-inch Laptop");
 
     }
+    public void addItemToCartBtn() {
+        driver.findElements(By.xpath("//input[@value='Add to cart']"))
+                .get(1).click();
+    }
+    public void checkYourCartBtn() {
+        driver.findElement(By.xpath("//div[@class='footer']//a[@class='ico-cart']")).click();
+    }
+
+
 }
